@@ -1,0 +1,28 @@
+.registrationPage {
+    padding: 88px 10px 10px 48px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 90px;
+    background-color: #fff;
+    min-height: 100vh;
+    &__img {
+        width: 619px;
+    }
+}
+
+@media only screen and (max-width: 1160px) {
+    .registrationPage {
+        justify-content: center;
+        &__img {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 615px) {
+    .registrationPage {
+        padding: 40px 15px 0 15px;
+        align-items: start;
+    }
+}

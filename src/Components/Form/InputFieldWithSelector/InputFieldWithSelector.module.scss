@@ -1,0 +1,64 @@
+.inputFieldWithSelector {
+    width: 100%;
+    padding: 16px 24px 16px 33px;
+    border: 1px solid rgb(227, 230, 237);
+    border-radius: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    &:focus-within {
+        border: 1px solid #6C9CFF;
+    }
+    &__input {
+        line-height: 150%;
+        outline: none;
+        border: none;
+        width: 100%;
+    }
+    &__selector {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        cursor: pointer;
+        border-right: 1px solid rgb(161, 169, 195);
+        padding-right: 20px;
+        gap: 10px;
+    }
+    &__list {
+        position: absolute;
+        z-index: 1;
+        padding: 8px;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        max-height: 230px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #fff;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 29px;
+        border-bottom-left-radius: 29px;
+        border-color: #fff;
+    }
+    &__item {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 11px 12px 11px 24px;
+        height: 40px;
+        cursor: pointer;
+        gap: 15px;
+        &:hover {
+            background-color: rgb(245, 245, 247);
+        }
+    }
+}
+
+.inputFieldWithSelectorOpen {
+    background-color: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 20px 0px rgba(18, 17, 39, 0.1);
+}

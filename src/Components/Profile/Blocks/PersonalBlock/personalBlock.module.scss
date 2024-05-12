@@ -1,0 +1,14 @@
+.personalBlock {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 24px 24px 24px 54px;
+    height: 700px;
+}
+
+@media only screen and (max-width: 650px) {
+    .personalBlock {
+        padding: 24px 16px;
+        border-radius: 0px;
+    }
+}

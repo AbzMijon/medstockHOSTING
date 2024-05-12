@@ -1,0 +1,25 @@
+.deliveryBlock {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 24px 24px 24px 54px;
+    height: 700px;
+    &__title {
+        margin-bottom: 20px;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 130%;
+    }
+    &__btn {
+        margin-top: 24px;
+        width: 188px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .deliveryBlock {
+        padding: 24px 16px;
+        border-radius: 0px;
+        height: auto;
+    }
+}

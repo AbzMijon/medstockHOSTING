@@ -1,0 +1,111 @@
+.registrationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    max-width: 400px;
+    &__title {
+        font-size: 28px;
+        line-height: 130%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 8px;
+    }
+    &__btn {
+        width: 100%;
+    }
+    &__input {
+        width: 188px;
+    }
+    &__nameAndSurname {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+    }
+    &__checkbox_wrap {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 16px;
+        position: relative;
+    }
+    &__checkbox {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+    &__checkbox_text {
+        line-height: 24px;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            border: 1px solid rgb(227, 230, 237);
+            flex-grow: 0;
+            border-radius: 4px;
+            margin-right: 16px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+            cursor: pointer;
+            &:hover {
+                border: 1px solid #473CFA;
+            }
+        }
+        span {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+    &__checkbox:checked + .registrationForm__checkbox_text::before {
+        border: 1px solid rgb(108, 156, 255);
+        background-color: rgb(108, 156, 255);
+        background-image: url("../../../assets/svg/mark.svg");
+    }
+    &__variants_list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__variants_item {
+        width: 54px;
+        height: 54px;
+        border: 1px solid rgb(227, 230, 237);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+            border: 2px solid rgb(108, 156, 255);
+        }
+    }
+    &__variants_title {
+        margin-bottom: 24px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .registrationForm {
+        &__nameAndSurname {
+            flex-direction: column;
+            gap: 42px;
+        }
+        &__title {
+            font-size: 24px;
+        }
+        &__logo {
+            width: 136px;
+            height: 20px;
+        }
+        &__input {
+            width: 100%;
+        }
+    }
+}

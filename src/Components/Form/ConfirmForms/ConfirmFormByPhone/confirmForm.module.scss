@@ -1,0 +1,65 @@
+.confirmForm {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+    &__title {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 130%;
+    }
+    &__subtitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__change {
+        color: rgb(161, 169, 195);
+        text-decoration-line: underline;
+        cursor: pointer;
+    }
+    &__input {
+        margin-bottom: 16px;
+        width: 100%;
+    }
+    &__oneMore {
+        color: rgb(108, 156, 255);
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    &__btn {
+        width: 100%;
+    }
+    &__sms {
+        color: rgb(161, 169, 195);
+        text-decoration: underline;
+        text-align: center;
+        cursor: pointer;
+    }
+    &__newCode {
+        color: rgb(161, 169, 195);
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .confirmForm {
+        &__title {
+            text-align: center;
+            font-size: 24px;
+        }
+        &__oneMore {
+            text-align: center;
+        }
+        &__input {
+            display: flex;
+            justify-content: center;
+        }
+        &__form {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}

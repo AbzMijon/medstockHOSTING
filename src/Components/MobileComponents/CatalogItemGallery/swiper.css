@@ -1,0 +1,8 @@
+.swiper-pagination-progressbar {
+    position: static;
+    margin-top: 24px;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: rgb(33, 30, 49);
+}

@@ -1,0 +1,61 @@
+@import url('./styles/reset.css');
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+body {
+    font-family: 'Sourse Sans Pro', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: rgb(245, 245, 247);
+    color: rgb(33, 30, 49);
+}
+
+input, button {
+    color: rgb(33, 30, 49);
+    font-family: 'Sourse Sans Pro', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+a {
+    color: rgb(33, 30, 49);
+    text-decoration: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+    border: none;
+}
+
+
+@font-face {
+    font-family: 'Sourse Sans Pro';
+    src: url('./assets/fonts/SourceSans3-Regular.ttf') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sourse Sans Pro';
+    src: url('./assets/fonts/SourceSans3-SemiBold.ttf') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat-Regular.ttf') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}

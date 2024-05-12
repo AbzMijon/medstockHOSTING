@@ -1,0 +1,52 @@
+.accordion {
+    border-bottom: 1px solid rgb(227, 230, 237);
+    &__initial {
+        height: 84px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 150%;
+    }
+    &__list {
+        list-style-type: disc;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-height: 138 0px;
+        overflow-y: auto;
+    }
+    &__filter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+    &__reviews_count {
+        color: rgb(161, 169, 195);
+    }
+    &__rating {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        span {
+            font-weight: 600;
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .accordion {
+        &__initial {
+            height: 78px;
+        }
+        &__title {
+            font-size: 16px;
+        }
+    }
+}

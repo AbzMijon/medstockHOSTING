@@ -1,0 +1,18 @@
+.pinInput {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 40px;
+    &__digit {
+        width: 40px;
+        height: 54px;
+        border: 1px solid rgb(227, 230, 237);
+        border-radius: 10px;
+        font-size: 40px;
+        outline: none;
+        text-align: center;
+        &:focus {
+            border: 2px solid rgb(108, 156, 255);
+        }
+    }
+}

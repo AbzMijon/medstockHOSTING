@@ -1,0 +1,86 @@
+.modalRegistration {
+    max-height: 90vh;
+    width: 423px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(18, 17, 39, 0.1);
+    background: rgb(255, 255, 255);
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        padding: 0 40px 40px 40px;
+    }
+    &__close {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        cursor: pointer;
+        padding: 24px 24px 10px 24px;
+    }
+    &__title {
+        font-size: 28px;
+        font-weight: 600;
+    }
+    &__btns {
+        display: flex;
+        gap: 14px;
+        flex-direction: column;
+    }
+    &__btn {
+        width: 100%;
+    }
+    &__social {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__social_btn {
+        width: 100%;
+        border: none;
+        outline: none;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        height: 54px;
+        gap: 12px;
+        font-size: 20px;
+        padding: 17px 20px;
+        border-radius: 5px;
+        background: #c9e5fc;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+    &__or {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    &__or_line{
+        width: 97px;
+        height: 1px;
+        stroke-width: 1px;
+        background: #e3e6ed
+    }
+    &__or_text {
+        font-weight: 600;
+        font-size: 19px;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .modalRegistration {
+        width: 100vw;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        &__social_btn {
+            font-size: 16px;
+        }
+    }
+}

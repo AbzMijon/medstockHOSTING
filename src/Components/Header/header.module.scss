@@ -1,0 +1,132 @@
+.header {
+    height: 80px;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    &__container {
+        width: 100%;
+        padding: 20px 24px 20px 39px;
+        max-width: 1920px;
+        margin: 0 auto;
+        gap: 10px;
+    }
+    &__desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__leftBlock, &__rightBlock {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 110px;
+    }
+    &__leftBlock {
+        width: 100%;
+    }
+    &__logo {
+        cursor: pointer;
+    }
+    &__list {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 40px;
+    }
+    &__list_link {
+        line-height: 150%;
+        transition: 0.1s all;
+        &:hover {
+            font-weight: 600;
+        }
+    }
+    &__tools {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 24px;
+    }
+    &__tools_item {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: 0.1s all;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        &:hover {
+            background-color: #fff
+        }
+    }
+    &__tools_item_notifications {
+        position: absolute;
+        top: -3px;
+        right: -3px;
+        border-radius: 50%;
+        background-color: rgb(71, 60, 250);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        width: 18px;
+        height: 18px;
+    }
+    &__search {
+        min-width: 150px;
+        width: 100%;
+    }
+    &__mobile_search {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .header {
+        &__leftBlock, &__rightBlock {
+            gap: 15px;
+        }
+        &__list {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .header {
+        &__leftBlock, &__rightBlock {
+            gap: 5px;
+        }
+        &__rightBlock {
+            width: 100%;
+        }
+        &__list {
+            display: none;
+        }
+        &__search {
+            display: none;
+        }
+        &__mobile_search {
+            display: block;
+            margin-top: 20px;
+        }
+        &__container {
+            padding: 15px 15px 20px 15px;
+        }
+        &__logo {
+            width: 136px;
+            height: 20px;
+        }
+        &__tools {
+            gap: 10px;
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+}

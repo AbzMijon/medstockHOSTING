@@ -1,0 +1,71 @@
+.reviewCard {
+    padding: 24px;
+    background-color: #fff;
+    &__nameAndSettings {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+    }
+    &__name {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 130%;
+    }
+    &__date {
+        color: rgb(161, 169, 195);
+        line-height: 150%;
+        margin-bottom: 6px;
+    }
+    &__item {
+        color: rgb(161, 169, 195);
+        line-height: 150%;
+        margin-bottom: 7px;
+    }
+    &__text {
+        line-height: 150%;
+    }
+    &__answer {
+        margin-top: 24px;
+    }
+    &__answer_author {
+        color: rgb(108, 156, 255);
+        margin-bottom: 8px;
+    }
+    &__answer_textWrap {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        gap: 8px;
+    }
+    &__answer_line {
+        background: rgb(108, 156, 255);
+        width: 2px;
+        height: 42px;
+        border-radius: 100px;
+    }
+    &__answer_text {
+        line-height: 150%;
+    }
+    &__settings_icon {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            background-color: #e2e2e2;
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .reviewCard {
+        &__name {
+            font-size: 24px;
+        }
+    }
+}

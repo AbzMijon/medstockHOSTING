@@ -1,0 +1,19 @@
+.swiper-pagination-progressbar {
+    position: static;
+    max-width: 1220px;
+    margin: 70px auto 25px auto;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background-color: #473CFA;
+}
+
+.swiper {
+    overflow: visible;
+}
+
+@media only screen and (max-width: 650px) {
+    .swiper-pagination-progressbar {
+        margin: 60px auto 20px auto;
+    }
+}

@@ -1,0 +1,29 @@
+.viewPurchase {
+    &__head {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgb(227, 230, 237);
+        height: 72px;
+        margin-bottom: 24px;
+        cursor: pointer;
+    }
+    &__order {
+        font-weight: 600;
+    }
+    &__list {
+        max-height: 550px;
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .viewPurchase {
+        &__head {
+            padding: 0 16px;
+            background-color: #fff;
+            border: none;
+        }
+    }
+}

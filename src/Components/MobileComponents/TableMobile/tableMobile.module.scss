@@ -1,0 +1,27 @@
+.tableMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    &__table {
+        background-color: #fff;
+        width: 100%;
+        padding: 0 16px;
+        cursor: pointer;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgb(227, 230, 237);
+        height: 84px;
+        &:last-child {
+            border: none;
+        }
+    }
+    &__cell_name {
+        font-weight: 600;
+    }
+    &__cell_data {
+
+    }
+}

@@ -1,0 +1,85 @@
+.itemOptionCard {
+    height: 292px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &:hover {
+        .itemOptionCard__hover_btn {
+            display: block;
+        }
+        .itemOptionCard__checkbox_text::before {
+            border: 1px solid rgb(108, 156, 255);
+            background-color: rgb(108, 156, 255);
+            background-image: url("../../../assets/svg/mark.svg");
+        }
+    }
+    &__item_name {
+        margin-bottom: 10px;
+    }
+    &__item_img {
+        min-height: 200px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    &__item_price {
+        font-weight: 600;
+        margin-top: auto;
+    }
+    &__item_input {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+    }
+    &__checkbox {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+    &__checkbox_text {
+        line-height: 24px;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            border: 1px solid rgb(227, 230, 237);
+            flex-grow: 0;
+            border-radius: 4px;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+            cursor: pointer;
+            &:hover {
+                border: 1px solid #473CFA;
+            }
+        }
+    }
+    &__checkbox:checked + .itemOptionCard__checkbox_text::before {
+        border: 1px solid rgb(108, 156, 255);
+        background-color: rgb(108, 156, 255);
+        background-image: url("../../../assets/svg/mark.svg");
+    }
+    &__hover_btn {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__img_wrap {
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .itemOptionCard {
+        &__item_img {
+            height: 200px;
+        }
+    }
+}

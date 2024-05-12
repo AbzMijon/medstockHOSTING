@@ -1,0 +1,26 @@
+.recommendationBlogs {
+    padding: 80px 0;
+    &__title {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 130%;
+        max-width: 1280px;
+        padding: 0 15px;
+        margin: 0 auto 24px auto;
+    }
+    &__swiper {
+        width: 100%;
+        padding: 0 15px;
+    }
+    &__slide {
+        max-width: 400px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .recommendationBlogs {
+        &__slide {
+            max-width: none;
+        }
+    }
+}

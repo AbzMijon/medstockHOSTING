@@ -1,0 +1,117 @@
+.paymentsHistoryCard {
+    width: 100%;
+    height: 290px;
+    padding: 24px 24px 24px 0;
+    display: flex;
+    gap: 24px;
+    &__img_wrap {
+        position: relative;
+    }
+    &__img {
+        width: 294px;
+        height: 256px;
+        max-width: none;
+    }
+    &__heart {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+    &__list {
+        margin: 24px 0;
+    }
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        margin-top: auto;
+    }
+    &__footer_item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__total {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 15px;
+    }
+    &__sum {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 130%;
+    }
+    &__item {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    &__item + &__item {
+        margin-top: 24px;
+    }
+    &__item_img {
+        margin-right: 12px;
+        width: 64px;
+        height: 40px;
+    }
+    &__item_name {
+        font-size: 14px;
+    }
+    &__checkbox {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+    &__checkbox_text {
+        line-height: 24px;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            border: 1px solid rgb(227, 230, 237);
+            flex-grow: 0;
+            border-radius: 4px;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+        }
+    }
+    &__checkbox:checked + .paymentsHistoryCard__checkbox_text::before {
+        border: 1px solid rgb(108, 156, 255);
+        background-color: rgb(108, 156, 255);
+        background-image: url("../../../assets/svg/mark.svg");
+    }
+    &__footer_name {
+        font-weight: 600;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .paymentsHistoryCard {
+        flex-direction: column;
+        height: auto;
+        padding: 16px;
+        &__img {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.confirmationPage {
+    padding: 88px 10px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+    background-color: #fff;
+    min-height: 100vh;
+    position: relative;
+    &__img {
+        width: 1000px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 1560px) {
+    .confirmationPage {
+        &__img {
+            width: 700px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1160px) {
+    .confirmationPage {
+        justify-content: center;
+        &__img {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .confirmationPage {
+        padding: 40px 15px 0 15px;
+        align-items: start;
+    }
+}

@@ -1,0 +1,61 @@
+.changePassBlock {
+    max-width: 400px;
+    &__title {
+        margin-bottom: 44px;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 130%;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__btn {
+        width: 100%;
+    }
+    &__field {
+        height: 54px;
+    }
+    &__checkbox {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+    &__checkbox_text {
+        line-height: 24px;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            border: 1px solid rgb(227, 230, 237);
+            flex-grow: 0;
+            border-radius: 4px;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+            cursor: pointer;
+            &:hover {
+                border: 1px solid #473CFA;
+            }
+        }
+    }
+    &__checkbox:checked + .changePassBlock__checkbox_text::before {
+        border: 1px solid rgb(108, 156, 255);
+        background-color: rgb(108, 156, 255);
+        background-image: url("../../../../../assets/svg/mark.svg");
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .changePassBlock {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,51 @@
+.personalInfoBlock {
+    max-width: 400px;
+    &__title {
+        margin-bottom: 44px;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 130%;
+    }
+    &__name {
+        display: flex;
+        justify-content: start;
+        gap: 24px;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__pass {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+    }
+    &__change {
+        text-decoration: underline;
+        color: #A1A9C3;
+        cursor: pointer;
+    }
+    &__btn {
+        width: 100%;
+    }
+    &__field, &__field_pass_input {
+        height: 54px;
+    }
+    &__field_pass_input {
+        pointer-events: none;
+    }
+    &__field_pass {
+        cursor: not-allowed;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .personalInfoBlock {
+        max-width: 100%;
+        &__name {
+            flex-direction: column;
+        }
+    }
+}

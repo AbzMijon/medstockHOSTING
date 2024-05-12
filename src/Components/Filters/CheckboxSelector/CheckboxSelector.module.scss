@@ -1,0 +1,72 @@
+.checkboxSelector {
+    &__input {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;
+        height: 70px;
+        padding: 20px 24px;
+        cursor: pointer;
+    }
+    &__title {
+        font-size: 20px;
+    }
+    &__arrow {
+        filter: brightness(0) saturate(100%) invert(0%) sepia(2%) saturate(24%) hue-rotate(342deg) brightness(96%) contrast(100%);
+    }
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__item_input {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+    }
+    &__checkbox {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+    &__list {
+        padding: 0 24px 20px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    &__checkbox_text {
+        line-height: 24px;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            border: 1px solid rgb(227, 230, 237);
+            flex-grow: 0;
+            border-radius: 4px;
+            margin-right: 16px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+            cursor: pointer;
+            &:hover {
+                border: 1px solid #473CFA;
+            }
+        }
+    }
+    &__checkbox:checked + .checkboxSelector__checkbox_text::before {
+        border: 1px solid rgb(108, 156, 255);
+        background-color: rgb(108, 156, 255);
+        background-image: url("../../../assets/svg/mark.svg");
+    }
+    &__count {
+        color: rgb(161, 169, 195);
+    }
+}

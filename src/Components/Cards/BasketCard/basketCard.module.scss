@@ -1,0 +1,161 @@
+.basketCard {
+    width: 100%;
+    height: 384px;
+    padding: 24px 24px 0 0;
+    display: flex;
+    gap: 24px;
+    &__img_wrap {
+        position: relative;
+    }
+    &__img {
+        width: 296px;
+        height: 256px;
+    }
+    &__heart {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__title_and_delete {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    &__delete {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border-radius: 50%;
+        &:hover {
+            background-color: #fff;
+        }
+    }
+    &__more {
+        text-decoration: underline;
+        color: rgb(161, 169, 195);
+        margin: 24px 0;
+        cursor: pointer;
+    }
+    &__list {
+        margin-bottom: 24px;
+    }
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+    }
+    &__counter {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 3px;
+    }
+    &__counter_btn {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgb(227, 230, 237);
+        border-radius: 4px;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+        &:hover {
+            background-color: #6C9CFF;
+            color: #fff;
+            border: 1px solid #6C9CFF;
+        }
+    }
+    &__count {
+        width: 76px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgb(227, 230, 237);
+        height: 40px;
+    }
+    &__total {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 15px;
+    }
+    &__ndc {
+        color: rgb(161, 169, 195);
+    }
+    &__sum {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 130%;
+    }
+    &__item {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    &__item + &__item {
+        margin-top: 24px;
+    }
+    &__item_delete {
+        width: 24px;
+        height: 24px;
+        margin-right: 16px;
+        cursor: pointer;
+        border: 1.6px solid rgb(227, 230, 237);
+        border-radius: 4px;
+        outline: none;
+        background-color: transparent;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            background-color: #6C9CFF;
+            color: #fff;
+            border: 1.6px solid #6C9CFF;
+        }
+    }
+    &__item_img {
+        margin-right: 12px;
+        width: 64px;
+        height: 40px;
+    }
+    &__item_name {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 1140px) {
+    .basketCard {
+        flex-direction: column;
+        padding-top: 0;
+        height: auto;
+        &__img {
+            width: 100%;
+        }
+        &__footer {
+            flex-direction: column;
+            align-items: start;
+            gap: 24px;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .basketCard {
+        padding: 0;
+    }
+}

@@ -1,0 +1,21 @@
+.statusCellComplete {
+    border-radius: 12px;
+    background: rgba(108, 156, 255, 0.5);
+    color: #473CFA;
+    height: 36px;
+    width: 106px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statusCellCancel {
+    border-radius: 12px;
+    background-color: rgba(228, 82, 100, 0.2);
+    color: #E45264;
+    height: 36px;
+    width: 106px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

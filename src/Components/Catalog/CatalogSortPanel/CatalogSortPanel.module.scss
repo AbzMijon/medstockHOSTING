@@ -1,0 +1,48 @@
+.catalogSortPanel {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 34px;
+    overflow-x: auto;
+    &__btn, &__btn_filter {
+        padding: 8.5px 24px 7.5px 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 12px;
+        background-color: rgb(255, 255, 255);
+        height: 40px;
+        white-space: nowrap;
+        &:hover {
+            background-color: transparent;
+        }
+    }
+    &__btn_filter:hover {
+        background-color: #fff;
+    }
+    &__btn_arrowIcon {
+        filter: brightness(0) saturate(100%) invert(8%) sepia(13%) saturate(2402%) hue-rotate(209deg) brightness(98%) contrast(89%);
+    }
+    &__sort {
+        width: 184px;
+    }
+    &__new {
+        width: 144px;
+    }
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .catalogSortPanel {
+        &__sort {
+            min-width: 130px;
+        }
+    }
+}

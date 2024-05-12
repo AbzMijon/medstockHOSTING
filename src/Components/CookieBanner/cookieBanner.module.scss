@@ -1,0 +1,72 @@
+.cookieBanner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(29, 29, 31, 0.5);
+    z-index: 10;
+    display: flex;
+    align-items: end;
+    &__content {
+        width: 100%;
+        background-color: #fff;
+        padding: 24px 0 48px 0;
+    }
+    &__container {
+        max-width: 1280px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    &__btns {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 24px;
+    }
+    &__title {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 16px;
+    }
+    &__info {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 32px;
+    }
+    &__text {
+        margin-bottom: 6px;
+        line-height: 150%;
+    }
+    &__subtext {
+        line-height: 150%;
+        color: rgb(161, 169, 195);
+        text-decoration: underline;
+    }
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+    }
+}
+
+@media only screen and (max-width: 868px) {
+    .cookieBanner {
+        &__wrap {
+            flex-direction: column;
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .cookieBanner {
+        &__wrap {
+            flex-direction: column;
+        }
+        &__info {
+            flex-direction: column;
+        }
+    }
+}

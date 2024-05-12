@@ -1,0 +1,49 @@
+.deliveryForm {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 400px;
+    width: 100%;
+    &__name {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 24px;
+    }
+    &__street {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &__btn {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .deliveryForm {
+        max-width: 100%;
+        &__field {
+            height: 54px;
+        }
+        &__name {
+            flex-direction: column;
+        }
+        &__street {
+            grid-template-rows: repeat(3, 1fr);
+        }
+        &__street > &__field:first-child {
+            grid-row: 1/1;
+            grid-column: 1/4;
+        }
+        &__street > &__field:nth-child(2) {
+            grid-column: 1/2;
+        }
+        &__street > &__field:last-child {
+            grid-column: 2/4;
+        }
+        &__name > &__field {
+            width: 100%;
+        }
+    }
+}
