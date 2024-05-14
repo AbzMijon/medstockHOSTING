@@ -2,6 +2,8 @@ import styles from './leftNavigationBlock.module.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
 import logoutIcon from '@assets/svg/logout.svg';
 import defaultAvatar from '@assets/img/defaultAvatar.png';
+import { useAppDispatch } from '@src/redux/store';
+import { logoutThunk } from '@src/api/authApi/authThunks';
 
 type Props = {
     menuData: any[];
@@ -10,11 +12,16 @@ type Props = {
 function LeftNavigationBlock({ menuData }: Props) {
 
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
     const { pathname } = useLocation();
 
     const handleRedirect = (link: string) => {
         navigate(link);
     }
+
+    const logout = () => {
+        dispatch(logoutThunk());
+    };
 
     return (
         <div className={styles.leftNavigationBlock}>
@@ -32,7 +39,7 @@ function LeftNavigationBlock({ menuData }: Props) {
                     </li>
                 ))}
             </ul>
-            <div className={styles.leftNavigationBlock__logout}>
+            <div className={styles.leftNavigationBlock__logout} onClick={logout}>
                 <img src={logoutIcon} alt="" />
                 <p className={styles.leftNavigationBlock__logout_name}>Выход</p>
             </div>

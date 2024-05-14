@@ -18,11 +18,9 @@ const headerReducer = createSlice({
         ]
     },
     reducers: {
-        setIsAuth: (state, action: PayloadAction<{ isAuth: boolean }>) => {
-            
-        },
+
     },
 });
 
-export const { setIsAuth } = headerReducer.actions;
+export const {  } = headerReducer.actions;
 export default headerReducer.reducer;

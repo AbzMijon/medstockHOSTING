@@ -8,5 +8,6 @@ export const ROUTES = {
     favorites: '/favorites',
     basket: '/basket',
     catalogById: '/catalog/:id',
-    profile: '/profile/:tab'
+    profile: '/profile/:tab',
+    authSocial: '/key_auth/'
 };

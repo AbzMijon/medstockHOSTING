@@ -7,6 +7,7 @@ import LayoutWithoutHeader from 'src/Layouts/LayoutWithoutHeader/LayoutWithoutHe
 import { useAppDispatch } from '@src/redux/store';
 import { setModalByName } from '@src/redux/reducers/modalReducer/modalReducer';
 import { useCookies } from 'react-cookie';
+import AuthSocialPage from '@src/Pages/AuthSocialPage/AuthSocialPage';
 
 const HomePage = React.lazy(() => import('@pages/HomePage/HomePage'));
 const RegistrationPage = React.lazy(() => import('@pages/StepRegistraion/RegistrationPage/RegistrationPage'));
@@ -47,6 +48,7 @@ function RootRoute() {
                 <Route element={ <LayoutWithoutHeader/> }>
                     <Route path={ROUTES.registration} element={<RegistrationPage />} />
                     <Route path={ROUTES.verification} element={<ConfirmationPage />} />
+                    <Route path={ROUTES.authSocial} element={<AuthSocialPage />} />
                 </Route>
                 <Route path='*' element={<Navigate to={ROUTES.home}/>} />
             </Routes>

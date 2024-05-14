@@ -6,17 +6,24 @@ import { useSelector } from 'react-redux';
 import { authMenuSelector } from '@src/redux/reducers/headerReducer/headerSelector';
 import logoutIcon from '@assets/svg/logout.svg';
 import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '@src/redux/store';
+import { logoutThunk } from '@src/api/authApi/authThunks';
 
 function AuthBlock() {
 
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const authMenu = useSelector(authMenuSelector);
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
 
     const handleRedirect = (link: string) => {
         navigate(link);
         setOpenMenu(false);
     }
+
+    const logout = () => {
+        dispatch(logoutThunk());
+    };
 
     return (
         <div className={styles.authBlock}>
@@ -40,7 +47,7 @@ function AuthBlock() {
                             </li>
                         ))}
                     </ul>
-                    <div className={styles.authBlock__logout}>
+                    <div className={styles.authBlock__logout} onClick={logout}>
                         <img src={logoutIcon} alt="" />
                         <p className={styles.authBlock__logout_name}>Выход</p>
                     </div>

@@ -3,14 +3,18 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 const authReducer = createSlice({
     name: 'authReducer',
     initialState: {
+        authInfo: {},
         isAuth: false
     },
     reducers: {
+        setAuthInfo: (state, action) => {
+            state.authInfo = action.payload;
+        },
         setIsAuth: (state, action: PayloadAction<{ isAuth: boolean }>) => {
             state.isAuth = action.payload.isAuth;
         },
     },
 });
 
-export const { setIsAuth } = authReducer.actions;
+export const { setIsAuth, setAuthInfo } = authReducer.actions;
 export default authReducer.reducer;
