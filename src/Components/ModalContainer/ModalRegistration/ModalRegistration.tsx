@@ -10,15 +10,14 @@ import vkIcon from '@assets/svg/Social3.svg';
 import { ROUTES } from '@src/Routes/routes';
 import { useNavigate } from 'react-router-dom';
 import { loginThunk } from '@src/api/authApi/authThunks';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
 
 function ModalRegistration() {
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
-    const [email, setEmail] = useState<string>('');
+    const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
     const handleCloseModal = () => {
@@ -31,10 +30,7 @@ function ModalRegistration() {
     }
 
     const handleLogIn = () => {
-        const testObj = {
-            username: "admin@gmail.com",
-            password: "123Qweasd"
-        }
+        const testObj = { username, password }
         dispatch(loginThunk(testObj));
     }
 
@@ -70,11 +66,15 @@ function ModalRegistration() {
                 <div className={styles.modalRegistration__form}>
                     <InputField
                         type='text'
-                        placeholder='E-mail'
+                        placeholder='Никнейм'
+                        value={username}
+                        setValue={setUsername}
                     />
                     <InputField
                         type='password'
                         placeholder='Пароль'
+                        value={password}
+                        setValue={setPassword}
                     />
                 </div>
                 <div className={styles.modalRegistration__btns}>

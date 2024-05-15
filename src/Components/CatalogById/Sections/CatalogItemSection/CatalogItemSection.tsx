@@ -8,15 +8,17 @@ import searchIcon from '@assets/svg/search.svg';
 import AccordionList from 'src/Components/AccordionList/AccordionList';
 import AccordionComments from 'src/Components/AccordionComments/AccordionComments';
 import { useAppDispatch } from 'src/redux/store';
-import { setItemOptions, setModalByName } from 'src/redux/reducers/modalReducer/modalReducer';
+import { setItemOptions, setMessageModal, setModalByName } from 'src/redux/reducers/modalReducer/modalReducer';
 import { useMediaQuery } from 'react-responsive';
 import CatalogItemGallery from '@src/Components/MobileComponents/CatalogItemGallery/CatalogItemGallery';
+import { useSelector } from 'react-redux';
+import { isAuthSelector } from '@src/redux/reducers/authReducer/authSelector';
 
-function CatalogItemSection() {
+function CatalogItemSection({ catalogItem }: any) {
 
     const dispatch = useAppDispatch();
+    const isAuth = useSelector(isAuthSelector);
     const [favorite, setFavorite] = useState<boolean>(false);
-    const catalogItem = CATALOG_ITEM;
 
     const isLaptop = useMediaQuery({
         query: '(max-width: 1140px)',
@@ -27,6 +29,15 @@ function CatalogItemSection() {
         dispatch(setItemOptions({ options }));
     }
 
+    const handleFavorite = (isFavorite: boolean) => {
+        if(isAuth) {
+            setFavorite(isFavorite);
+        }   else {
+            dispatch(setModalByName({ isModalActive: true, modalName: 'modal-message', withDarkOverlay: true }));
+            dispatch(setMessageModal({ message: 'Что бы добавить товар в избранное вам нужно зарегестрироваться' }));
+        }
+    };
+
     return (
         <section className={styles.catalogItem}>
             <div className={styles.catalogItem__gallery}>
@@ -36,16 +47,16 @@ function CatalogItemSection() {
                     <>
                         {catalogItem.gallery && catalogItem?.gallery?.map((photo: any) => (
                             <div className={styles.catalogItem__img_wrap} id={photo.key}>
-                                <img src={photo.img} alt="" className={styles.catalogItem__img} />
+                                <img src={photo.src} alt="" className={styles.catalogItem__img} />
                             </div>
                         ))}
                     </>
                 )
                 }
                 {favorite ? (
-                    <img src={heartActiveIcon} alt="" className={styles.catalogItem__heart} onClick={() => setFavorite(false)} />
+                    <img src={heartActiveIcon} alt="" className={styles.catalogItem__heart} onClick={() => handleFavorite(false)} />
                 ) : (
-                    <img src={heartIcon} alt="" className={styles.catalogItem__heart} onClick={() => setFavorite(true)} />
+                    <img src={heartIcon} alt="" className={styles.catalogItem__heart} onClick={() => handleFavorite(true)} />
                 )}
             </div>
             <div className={styles.catalogItem__content}>

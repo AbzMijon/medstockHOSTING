@@ -3,7 +3,11 @@ import styles from './catalogViewedSection.module.scss';
 import CatalogCard from 'src/Components/Cards/CatalogCard/CatalogCard';
 import { CATALOG_VIEWED_DATA } from 'src/constants';
 
-function CatalogViewedSection() {
+type Props = {
+    viewedItems: any;
+};
+
+function CatalogViewedSection({ viewedItems }: Props) {
 
     const isMobile = useMediaQuery({
         query: '(max-width: 650px)',
@@ -24,11 +28,11 @@ function CatalogViewedSection() {
                     />
                 ) : (
                     <>
-                        {CATALOG_VIEWED_DATA && CATALOG_VIEWED_DATA?.map((card: any) => (
+                        {viewedItems && viewedItems?.map((card: any) => (
                             <CatalogCard
                                 id={card?.id}
-                                title={card.title}
-                                subtitle={card.subtitle}
+                                title={card.name}
+                                subtitle={card.category}
                                 price={card.price}
                                 gallery={card.gallery}
                                 moreGalleryTotal={card.moreGalleryTotal}

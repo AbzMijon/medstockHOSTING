@@ -21,7 +21,7 @@ const AuthSocialPage = () => {
 
             dispatch(loginWithOAuthKeyThunk());
         } else {
-            
+            window.location.href = '/';
         }
     }, []);
 

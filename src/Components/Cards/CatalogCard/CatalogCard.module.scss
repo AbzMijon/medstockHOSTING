@@ -1,5 +1,4 @@
 .catalogCard {
-    width: 100%;
     min-height: 400px;
     position: relative;
     cursor: pointer;
@@ -74,5 +73,11 @@
         .catalogCard__img_hover {
             display: block;
         }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .catalogCard {
+        width: 100%;
     }
 }

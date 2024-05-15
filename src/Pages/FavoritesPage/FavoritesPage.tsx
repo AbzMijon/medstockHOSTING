@@ -10,6 +10,8 @@ function FavoritesPage() {
 
     const [open, setOpen] = useState<boolean>(false);
 
+    const viewFavoritesPage = [];
+
     return (
         <div className={styles.favoritesPage}>
             <div className={styles.favoritesPage__filter_wrap}>
@@ -21,7 +23,7 @@ function FavoritesPage() {
             </div>
             <div className={styles.favoritesPage__container}>
                 <CatalogSortPanel setOpen={setOpen} />
-                {CATALOG_DATA && CATALOG_DATA.length ? (
+                {viewFavoritesPage && viewFavoritesPage.length ? (
                     <ul className={styles.favoritesPage__list}>
                         {CATALOG_DATA?.map((favoritesItem: any) => (
                             <CatalogCard

@@ -3,8 +3,10 @@ import heartIcon from '@assets/svg/heartDefault.svg';
 import heartActiveIcon from '@assets/svg/activeHeart.svg';
 import trashIcon from '@assets/svg/trash.svg';
 import { useState } from 'react';
-import { setItemOptions, setModalByName } from 'src/redux/reducers/modalReducer/modalReducer';
+import { setItemOptions, setMessageModal, setModalByName } from 'src/redux/reducers/modalReducer/modalReducer';
 import { useAppDispatch } from 'src/redux/store';
+import { useSelector } from 'react-redux';
+import { isAuthSelector } from '@src/redux/reducers/authReducer/authSelector';
 
 type Props = {
     img: string;
@@ -30,6 +32,7 @@ function BasketCard({
     const [counter, setCounter] = useState<number>(+count);
     const dispatch = useAppDispatch();
     const selectedOptions = options?.filter((option: any) => option?.select)
+    const isAuth = useSelector(isAuthSelector);
 
     const handlePlusCount = () => {
         setCounter((prev: number) => prev + 1);
@@ -44,16 +47,25 @@ function BasketCard({
     const handleOpenOptions = (options: any[]) => {
         dispatch(setModalByName({ isModalActive: true, modalName: 'modal-items-options', withDarkOverlay: true }));
         dispatch(setItemOptions({ options }));
-    }
+    };
+
+    const handleFavorite = (isFavorite: boolean) => {
+        if(isAuth) {
+            setFavorite(isFavorite);
+        }   else {
+            dispatch(setModalByName({ isModalActive: true, modalName: 'modal-message', withDarkOverlay: true }));
+            dispatch(setMessageModal({ message: 'Что бы добавить товар в избранное вам нужно зарегестрироваться' }));
+        }
+    };
 
     return (
         <div className={styles.basketCard}>
             <div className={styles.basketCard__img_wrap}>
                 <img src={img} alt="" className={styles.basketCard__img} />
                 {favorite ? (
-                    <img src={heartActiveIcon} alt="" className={styles.basketCard__heart} onClick={() => setFavorite(false)} />
+                    <img src={heartActiveIcon} alt="" className={styles.basketCard__heart} onClick={() => handleFavorite(false)} />
                 ) : (
-                    <img src={heartIcon} alt="" className={styles.basketCard__heart} onClick={() => setFavorite(true)} />
+                    <img src={heartIcon} alt="" className={styles.basketCard__heart} onClick={() => handleFavorite(true)} />
                 )}
             </div>
             <div className={styles.basketCard__content}>

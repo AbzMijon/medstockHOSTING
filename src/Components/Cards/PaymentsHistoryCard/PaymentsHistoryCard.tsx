@@ -2,6 +2,10 @@ import styles from './paymentsHistoryCard.module.scss';
 import heartIcon from '@assets/svg/heartDefault.svg';
 import heartActiveIcon from '@assets/svg/activeHeart.svg';
 import { useState } from 'react';
+import { useAppDispatch } from '@src/redux/store';
+import { setMessageModal, setModalByName } from '@src/redux/reducers/modalReducer/modalReducer';
+import { useSelector } from 'react-redux';
+import { isAuthSelector } from '@src/redux/reducers/authReducer/authSelector';
 
 type Props = {
     img: string;
@@ -22,16 +26,28 @@ function PaymentsHistoryCard({
     count,
     sum
 }: Props) {
+
     const [favorite, setFavorite] = useState<boolean>(isFavorite || false);
+    const dispatch = useAppDispatch();
+    const isAuth = useSelector(isAuthSelector);
+
+    const handleFavorite = (isFavorite: boolean) => {
+        if(isAuth) {
+            setFavorite(isFavorite);
+        }   else {
+            dispatch(setModalByName({ isModalActive: true, modalName: 'modal-message', withDarkOverlay: true }));
+            dispatch(setMessageModal({ message: 'Что бы добавить товар в избранное вам нужно зарегестрироваться' }));
+        }
+    };
 
     return (
         <div className={styles.paymentsHistoryCard}>
             <div className={styles.paymentsHistoryCard__img_wrap}>
                 <img src={img} alt="" className={styles.paymentsHistoryCard__img} />
                 {favorite ? (
-                    <img src={heartActiveIcon} alt="" className={styles.paymentsHistoryCard__heart} onClick={() => setFavorite(false)} />
+                    <img src={heartActiveIcon} alt="" className={styles.paymentsHistoryCard__heart} onClick={() => handleFavorite(false)} />
                 ) : (
-                    <img src={heartIcon} alt="" className={styles.paymentsHistoryCard__heart} onClick={() => setFavorite(true)} />
+                    <img src={heartIcon} alt="" className={styles.paymentsHistoryCard__heart} onClick={() => handleFavorite(true)} />
                 )}
             </div>
             <div className={styles.paymentsHistoryCard__content}>

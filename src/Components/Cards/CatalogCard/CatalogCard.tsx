@@ -4,6 +4,10 @@ import activeHeartIcon from '@assets/svg/activeHeart.svg';
 import { useState } from 'react';
 import DefaultButton from 'src/Components/DefaultButton/DefaultButton';
 import { useNavigate } from 'react-router-dom';
+import { isAuthSelector } from '@src/redux/reducers/authReducer/authSelector';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '@src/redux/store';
+import { setMessageModal, setModalByName } from '@src/redux/reducers/modalReducer/modalReducer';
 
 type Props = {
     id: number;
@@ -19,10 +23,21 @@ function CatalogCard({ id, title, subtitle, price, gallery, moreGalleryTotal, in
 
     const navigate = useNavigate();
     const [favorite, setFavorite] = useState<boolean>(initialFavorite || false);
+    const isAuth = useSelector(isAuthSelector);
+    const dispatch = useAppDispatch();
 
     const handleNavigate = (id: number) => {
         navigate(`/catalog/${id}`);
     }
+
+    const handleFavorite = (isFavorite: boolean) => {
+        if(isAuth) {
+            setFavorite(isFavorite);
+        }   else {
+            dispatch(setModalByName({ isModalActive: true, modalName: 'modal-message', withDarkOverlay: true }));
+            dispatch(setMessageModal({ message: 'Что бы добавить товар в избранное вам нужно зарегестрироваться' }));
+        }
+    };
 
     return (
         <li className={styles.catalogCard} key={id} onClick={() => handleNavigate(id)}>
@@ -35,7 +50,7 @@ function CatalogCard({ id, title, subtitle, price, gallery, moreGalleryTotal, in
                     className={styles.catalogCard__heart}
                     onClick={(e) => {
                         e.stopPropagation();
-                        setFavorite(false);
+                        handleFavorite(false);
                     }}
                 />
             ) : (
@@ -45,7 +60,7 @@ function CatalogCard({ id, title, subtitle, price, gallery, moreGalleryTotal, in
                     className={styles.catalogCard__heart}
                     onClick={(e) => {
                         e.stopPropagation();
-                        setFavorite(true);
+                        handleFavorite(true);
                     }}
                 />
             )}

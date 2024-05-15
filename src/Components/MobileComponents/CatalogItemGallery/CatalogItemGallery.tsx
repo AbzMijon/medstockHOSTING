@@ -23,7 +23,7 @@ function CatalogItemGallery({ gallery }: Props) {
             >
                 {gallery && gallery?.map((photo: any) => (
                     <SwiperSlide className={styles.catalogItemGallery__slide}>
-                        <img src={photo.img} alt="" className={styles.catalogItemGallery__img} />
+                        <img src={photo.src} alt="" className={styles.catalogItemGallery__img} />
                     </SwiperSlide>
                 ))}
             </Swiper>

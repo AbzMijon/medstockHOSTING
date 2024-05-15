@@ -237,19 +237,20 @@ export const CATALOG_VIEWED_DATA = [
 ];
 
 export const CATALOG_ITEM = {
+    id: 1,
     name: 'Nitro hb 8140 sante ',
     category: 'Кровать для интенсивной терапии',
     articul: '152841',
     size: '800 x 1025 x 2260 mm',
     unit: 'электрический',
     gallery: [
-        { id: 0, img: catalogItem1Img1 },
-        { id: 1, img: catalogItem1Img2 },
-        { id: 2, img: catalogItem2Img1 },
-        { id: 3, img: catalogItem2Img2 },
-        { id: 4, img: catalogItem3Img1 },
-        { id: 5, img: catalogItem3Img2 },
-        { id: 6, img: catalogItem1Img1},
+        { id: 0, src: catalogItem1Img1 },
+        { id: 1, src: catalogItem1Img2 },
+        { id: 2, src: catalogItem2Img1 },
+        { id: 3, src: catalogItem2Img2 },
+        { id: 4, src: catalogItem3Img1 },
+        { id: 5, src: catalogItem3Img2 },
+        { id: 6, src: catalogItem1Img1},
     ],
     options: [
         { id: 0, title: '28D Водонепроницаемый матрас', src: optionImg, price: '2500 руб', select: true },

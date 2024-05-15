@@ -8,6 +8,8 @@ import { useAppDispatch } from '@src/redux/store';
 import { setModalByName } from '@src/redux/reducers/modalReducer/modalReducer';
 import { useCookies } from 'react-cookie';
 import AuthSocialPage from '@src/Pages/AuthSocialPage/AuthSocialPage';
+import { useSelector } from 'react-redux';
+import { isAuthSelector } from '@src/redux/reducers/authReducer/authSelector';
 
 const HomePage = React.lazy(() => import('@pages/HomePage/HomePage'));
 const RegistrationPage = React.lazy(() => import('@pages/StepRegistraion/RegistrationPage/RegistrationPage'));
@@ -25,12 +27,21 @@ function RootRoute() {
     const dispatch = useAppDispatch();
     const [currentCityCookie] = useCookies(['currentCity']);
     const [cookiesAccept] = useCookies(['cookieAccepted']);
+    const isAuth = useSelector(isAuthSelector);
 
     useEffect(() => {
         if(!currentCityCookie?.currentCity && cookiesAccept?.cookieAccepted) {
             dispatch(setModalByName({ isModalActive: true, modalName: 'modal-confirm-country', withDarkOverlay: true }));
         }
     }, [cookiesAccept]);
+
+    const protectedCheck = (PersonalProfilePage: any) => {
+        if(isAuth) {
+            return <PersonalProfilePage />
+        }   else {
+            return <Navigate to={ROUTES.home}/>
+        }
+    }
 
     return (
         <Suspense fallback={<Loader />}>
@@ -43,7 +54,7 @@ function RootRoute() {
                     <Route path={ROUTES.favorites} element={<FavoritesPage />} />
                     <Route path={ROUTES.basket} element={<BasketPage />} />
                     <Route path={ROUTES.catalogById} element={<CatalogById />} />
-                    <Route path={ROUTES.profile} element={<PersonalProfilePage />} />
+                    <Route path={ROUTES.profile} element={protectedCheck(PersonalProfilePage)} />
                 </Route>
                 <Route element={ <LayoutWithoutHeader/> }>
                     <Route path={ROUTES.registration} element={<RegistrationPage />} />
