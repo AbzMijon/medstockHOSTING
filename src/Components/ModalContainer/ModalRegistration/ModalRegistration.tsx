@@ -34,9 +34,6 @@ function ModalRegistration() {
         dispatch(loginThunk(testObj));
     }
 
-    console.log('new update');
-    
-
     return (
         <div className={styles.modalRegistration}>
             <div className={styles.modalRegistration__close} onClick={handleCloseModal}>

@@ -14,6 +14,7 @@ export const loginThunk = (data: any) => {
                 SetCookie('refresh', res.data.refresh);
                 dispatch(setAuthInfo(res.data));
                 dispatch(setIsAuth({ isAuth: true }));
+                dispatch(removeModalByName({ modalName: 'modal-registration' }));
             }
         }).catch((err) => {
             dispatch(removeModalByName({ modalName: 'modal-registration' }));
