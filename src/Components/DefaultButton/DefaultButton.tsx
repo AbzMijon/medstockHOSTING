@@ -2,7 +2,7 @@ import styles from './defaultButton.module.scss';
 
 type Props = {
     text: string;
-    onClick: () => void;
+    onClick: any;
     type: 'primary' | 'secondary' | 'tertiary';
     icon?: string;
     className?: any;
@@ -20,7 +20,10 @@ function DefaultButton({ text, onClick, type, icon, className, disabled }: Props
                 : styles.tertiaryButton} 
                 ${className ? className : ''}
             `}
-            onClick={onClick}
+            onClick={(e) => {
+                e.stopPropagation();
+                onClick();
+            }}
             disabled={disabled}
         >
             {icon ? <img src={icon} alt="" className={styles.icon} /> : null}

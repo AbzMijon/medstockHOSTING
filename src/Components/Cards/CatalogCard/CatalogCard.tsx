@@ -39,6 +39,15 @@ function CatalogCard({ id, title, subtitle, price, gallery, moreGalleryTotal, in
         }
     };
 
+    const handleAddToBasket = () => {
+        if(isAuth) {
+            return;
+        }   else {
+            dispatch(setModalByName({ isModalActive: true, modalName: 'modal-message', withDarkOverlay: true }));
+            dispatch(setMessageModal({ message: 'Что бы добавить товар в корзину вам нужно зарегестрироваться' }));
+        }
+    };
+
     return (
         <li className={styles.catalogCard} key={id} onClick={() => handleNavigate(id)}>
             <img src={gallery[0]?.src} alt="" className={styles.catalogCard__img} />
@@ -83,7 +92,7 @@ function CatalogCard({ id, title, subtitle, price, gallery, moreGalleryTotal, in
                     </div>
                     <DefaultButton
                         text='Добавить в карзину'
-                        onClick={() => null}
+                        onClick={handleAddToBasket}
                         type='secondary'
                         className={styles.catalogCard__changeBlock_btn}
                     />

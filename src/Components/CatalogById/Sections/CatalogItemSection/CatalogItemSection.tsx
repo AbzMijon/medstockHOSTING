@@ -38,6 +38,15 @@ function CatalogItemSection({ catalogItem }: any) {
         }
     };
 
+    const handleAddToBasket = () => {
+        if(isAuth) {
+            return;
+        }   else {
+            dispatch(setModalByName({ isModalActive: true, modalName: 'modal-message', withDarkOverlay: true }));
+            dispatch(setMessageModal({ message: 'Что бы добавить товар в корзину вам нужно зарегестрироваться' }));
+        }
+    };
+
     return (
         <section className={styles.catalogItem}>
             <div className={styles.catalogItem__gallery}>
@@ -104,7 +113,7 @@ function CatalogItemSection({ catalogItem }: any) {
                 <DefaultButton
                     type='primary'
                     text='Добавить в корзину'
-                    onClick={() => null}
+                    onClick={handleAddToBasket}
                     icon={searchIcon}
                     className={styles.catalogItem__btn}
                 />

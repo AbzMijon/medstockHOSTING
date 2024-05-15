@@ -27,7 +27,7 @@
   },
   "scripts": {
     "dev": "rsbuild dev",
-    "build": "rsbuild build",
+    "build": "CI=false && rsbuild build",
     "test": "jest",
     "preview": "rsbuild eject"
   },
