@@ -9,5 +9,5 @@ export const ROUTES = {
     basket: '/basket',
     catalogById: '/catalog/:id',
     profile: '/profile/:tab',
-    authSocial: '/key_auth/:key/:status'
+    authSocial: '/key_auth/'
 };

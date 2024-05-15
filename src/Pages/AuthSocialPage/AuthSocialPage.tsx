@@ -28,7 +28,7 @@ const AuthSocialPage = () => {
         }
     }, []);
 
-    return <></>;
+    return <>asd</>;
 };
 
 export default AuthSocialPage;
