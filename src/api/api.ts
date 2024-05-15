@@ -2,10 +2,10 @@ import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
 import { GetCookie, removeAllCookies, SetCookie } from '@src/cookie/cookie';
 
-const hostBackendUrl = 'https://metal.lcs.by/medstock/med/api';
+const hostBackendUrl = 'https://metal.lcs.by/medstock/api';
 
 export const LOCAL_MEDIA_URL = 'http://localhost:8000';
-export const HOST_MEDIA_URL = 'https://metal.lcs.by/medstock/med';
+export const HOST_MEDIA_URL = 'https://metal.lcs.by/medstock/';
 
 export const Instance = axios.create({
     baseURL: hostBackendUrl,
