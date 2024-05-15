@@ -1,10 +1,12 @@
 import DefaultButton from 'src/Components/DefaultButton/DefaultButton';
 import styles from './confirmFormOldLink.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 function ConfirmFormOldLink() {
 
+    const navigate = useNavigate();
     const handleClick = () => {
-        window.history.back();
+        navigate('/');
     };
 
     return (
@@ -24,4 +26,4 @@ function ConfirmFormOldLink() {
     )
 }
 
-export default ConfirmFormOldLink
+export default ConfirmFormOldLink;

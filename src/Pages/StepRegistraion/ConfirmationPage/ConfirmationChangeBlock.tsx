@@ -19,6 +19,8 @@ function ConfirmationChangeBlock() {
             return <ConfirmFormBySms />
         case 'email':
             return <ConfirmFormByEmail />
+        case 'old-link':
+            return <ConfirmFormOldLink />
         default:
             return <ConfirmFormByPhone />
     }
