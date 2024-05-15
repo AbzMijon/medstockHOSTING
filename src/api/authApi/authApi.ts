@@ -5,7 +5,7 @@ const authApi = {
     login: (data: any) => Instance.post('/auth/login/', data),
     register: (data: any) => Instance.post('/auth/register/', data),
     authMe: () =>
-        Instance.get('/auth/me', {
+        Instance.get('/auth/me/', {
             headers: {
                 Authorization: `Bearer ${GetCookie('access_token')}`,
             },
