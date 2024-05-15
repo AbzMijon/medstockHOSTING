@@ -10,7 +10,8 @@ import vkIcon from '@assets/svg/Social3.svg';
 import { ROUTES } from '@src/Routes/routes';
 import { useNavigate } from 'react-router-dom';
 import { loginThunk } from '@src/api/authApi/authThunks';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function ModalRegistration() {
 
@@ -31,11 +32,14 @@ function ModalRegistration() {
 
     const handleLogIn = () => {
         const testObj = {
-            username: "hru@gmail.com",
+            username: "admin@gmail.com",
             password: "123Qweasd"
         }
         dispatch(loginThunk(testObj));
     }
+
+    console.log('new update');
+    
 
     return (
         <div className={styles.modalRegistration}>
