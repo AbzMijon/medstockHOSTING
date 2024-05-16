@@ -89,7 +89,8 @@ export const resetPasswordThunk = (email: { email: string }) => {
         authApi
             .resetPassword(email)
             .then((res: any) => {
-                dispatch(setMessageModal({ message: res.data.detail }));
+                dispatch(removeModalByName({ modalName: 'modal-recover-pass' }));
+                dispatch(setMessageModal({ message: 'Cсылка для восстановления отправлена на указанную почту' }));
                 dispatch(setModalByName({ isModalActive: true, modalName: 'modal-message', withOverlay: true }));
             })
             .catch((error: any) => {
@@ -104,10 +105,11 @@ export const createNewPasswordTC = (body: any) => {
         authApi
             .createNewPassword(body)
             .then((res: any) => {
-                dispatch(setMessageModal({ message: res.data.detail }));
+                dispatch(setMessageModal({ message: 'Пароль успешно изменен!' }));
                 dispatch(setModalByName({ isModalActive: true, modalName: 'modal-message', withOverlay: true }));
             })
             .catch((error: any) => {
+                window.location.href = '/';
                 dispatch(setModalByName({ isModalActive: true, modalName: 'modal-message', withDarkOverlay: true }));
                 dispatch(setMessageModal({ message: error.response.data.detail }));
             });

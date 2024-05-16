@@ -36,7 +36,7 @@ function ModalRegistration() {
 
     const handleRecoverPass = () => {
         handleCloseModal();
-        dispatch(setModalByName({ isModalActive: true, modalName: 'recover-pass-message', withDarkOverlay: true }));
+        dispatch(setModalByName({ isModalActive: true, modalName: 'modal-recover-pass', withDarkOverlay: true }));
     };
 
     return (

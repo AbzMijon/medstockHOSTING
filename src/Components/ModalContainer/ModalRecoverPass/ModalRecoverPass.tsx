@@ -15,7 +15,7 @@ const RecoverPassModal = () => {
     const [mail, setMail] = useState<string>('');
 
     const handleCloseModal = () => {
-        dispatch(removeModalByName({ modalName: 'recover-pass-message' }));
+        dispatch(removeModalByName({ modalName: 'modal-recover-pass' }));
     };
     
     const onSubmit = () => {

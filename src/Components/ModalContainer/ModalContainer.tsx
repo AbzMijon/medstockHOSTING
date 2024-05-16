@@ -26,7 +26,7 @@ const ModalContainer = () => {
         { id: 2, name: 'modal-select-country', element: <ModalSelectCountry /> },
         { id: 3, name: 'modal-registration', element: <ModalRegistration /> },
         { id: 3, name: 'modal-message', element: <MessageModal /> },
-        { id: 3, name: 'recover-pass-message', element: <RecoverPassModal /> },
+        { id: 3, name: 'modal-recover-pass', element: <RecoverPassModal /> },
     ];
 
   // HANDLERS
