@@ -71,6 +71,13 @@
         flex-direction: column;
         gap: 20px;
     }
+    &__recoverPass {
+        text-decoration: underline;
+        color: #9c9c9c;
+        text-align: center;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
 }
 
 @media only screen and (max-width: 650px) {

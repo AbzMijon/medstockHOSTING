@@ -83,3 +83,33 @@ export const loginWithOAuthKeyThunk = () => (dispatch: Dispatch<SetStateAction<{
         }, 100);
     });
 };
+
+export const resetPasswordThunk = (email: { email: string }) => {
+    return (dispatch: Dispatch<SetStateAction<{}>>) => {
+        authApi
+            .resetPassword(email)
+            .then((res: any) => {
+                dispatch(setMessageModal({ message: res.data.detail }));
+                dispatch(setModalByName({ isModalActive: true, modalName: 'modal-message', withOverlay: true }));
+            })
+            .catch((error: any) => {
+                dispatch(setModalByName({ isModalActive: true, modalName: 'modal-message', withDarkOverlay: true }));
+                dispatch(setMessageModal({ message: error.response.data.detail }));
+            });
+    };
+};
+
+export const createNewPasswordTC = (body: any) => {
+    return (dispatch: Dispatch<SetStateAction<{}>>) => {
+        authApi
+            .createNewPassword(body)
+            .then((res: any) => {
+                dispatch(setMessageModal({ message: res.data.detail }));
+                dispatch(setModalByName({ isModalActive: true, modalName: 'modal-message', withOverlay: true }));
+            })
+            .catch((error: any) => {
+                dispatch(setModalByName({ isModalActive: true, modalName: 'modal-message', withDarkOverlay: true }));
+                dispatch(setMessageModal({ message: error.response.data.detail }));
+            });
+    };
+};

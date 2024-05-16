@@ -10,6 +10,7 @@ import { useCookies } from 'react-cookie';
 import AuthSocialPage from '@src/Pages/AuthSocialPage/AuthSocialPage';
 import { useSelector } from 'react-redux';
 import { isAuthSelector } from '@src/redux/reducers/authReducer/authSelector';
+import PasswordRecoveryPage from '@src/Pages/PasswordRecoveryPage/PasswordRecoveryPage';
 
 const HomePage = React.lazy(() => import('@pages/HomePage/HomePage'));
 const RegistrationPage = React.lazy(() => import('@pages/StepRegistraion/RegistrationPage/RegistrationPage'));
@@ -60,6 +61,7 @@ function RootRoute() {
                     <Route path={ROUTES.registration} element={<RegistrationPage />} />
                     <Route path={ROUTES.verification} element={<ConfirmationPage />} />
                     <Route path={ROUTES.authSocial} element={<AuthSocialPage />} />
+                    <Route path={ROUTES.passwordRecover} element={<PasswordRecoveryPage />} />
                 </Route>
                 <Route path='*' element={<Navigate to={ROUTES.home}/>} />
             </Routes>

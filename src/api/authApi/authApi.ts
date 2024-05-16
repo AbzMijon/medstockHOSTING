@@ -15,6 +15,8 @@ const authApi = {
             refresh: GetCookie("refresh"),
         }),
     getAuthTokensWithOAuthKey: () => Instance.get(`auth/social_enter/?key=${GetCookie('oauth_key')}`),
+    resetPassword: (email: { email: string }) => Instance.post('auth/password_reset/', email),
+    createNewPassword: (body: any) => Instance.post('auth/password_reset/confirm/', body),
 };
 
 export default authApi;

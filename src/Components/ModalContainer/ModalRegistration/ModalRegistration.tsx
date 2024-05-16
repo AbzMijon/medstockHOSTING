@@ -2,7 +2,7 @@ import DefaultButton from '@src/Components/DefaultButton/DefaultButton';
 import styles from './modalRegistration.module.scss';
 import closeIcon from '@assets/svg/delete.svg';
 import { useAppDispatch } from '@src/redux/store';
-import { removeModalByName } from '@src/redux/reducers/modalReducer/modalReducer';
+import { removeModalByName, setModalByName } from '@src/redux/reducers/modalReducer/modalReducer';
 import InputField from '@src/Components/Form/InputField/InputField';
 import googleIcon from '@assets/svg/Social1.svg';
 import facebookIcon from '@assets/svg/Social2.svg';
@@ -32,7 +32,12 @@ function ModalRegistration() {
     const handleLogIn = () => {
         const testObj = { username, password }
         dispatch(loginThunk(testObj));
-    }
+    };
+
+    const handleRecoverPass = () => {
+        handleCloseModal();
+        dispatch(setModalByName({ isModalActive: true, modalName: 'recover-pass-message', withDarkOverlay: true }));
+    };
 
     return (
         <div className={styles.modalRegistration}>
@@ -81,6 +86,7 @@ function ModalRegistration() {
                         onClick={handleLogIn}
                         className={styles.modalRegistration__btn}
                     />
+                    <p className={styles.modalRegistration__recoverPass} onClick={handleRecoverPass}>Забыли пароль?</p>
                     <DefaultButton
                         text='Зарегистрироваться'
                         type='secondary'
