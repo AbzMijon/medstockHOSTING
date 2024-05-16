@@ -10,5 +10,7 @@ export const ROUTES = {
     catalogById: '/catalog/:id',
     profile: '/profile/:tab',
     authSocial: '/key_auth/',
-    passwordRecover: '/password_recover/'
+    passwordRecover: '/password_recover/',
+    delivery: '/delivery',
+    payment: '/payment'
 };

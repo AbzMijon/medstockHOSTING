@@ -19,6 +19,11 @@ import catalogItem3Img2 from '@assets/img/catalogItem3Img2.png';
 
 import optionImg from '@assets/img/option.png';
 
+import rassrochkaIcon from '@assets/svg/rassrochka.svg';
+import cashIcon from '@assets/svg/cash.svg';
+import cardIcon from '@assets/svg/byCard.svg';
+import fileIcon from '@assets/svg/basketIcon.svg';
+
 export const NEWS_CARDS_IN_MAIN_PAGE = [
     {
         id: 0,
@@ -435,4 +440,12 @@ export const FOOTER_DATA = [
             { id: 1, title: 'shop@medstok.by' },
         ]
     },
+];
+
+export const PAYMENTS_WAYS = [
+    { id: 0, icon: rassrochkaIcon, title: 'Рассрочка до 21 дней' },
+    { id: 1, icon: cashIcon, title: 'Наличными в кассу' },
+    { id: 2, icon: cardIcon, title: 'Картой онлайн' },
+    { id: 3, icon: cardIcon, title: 'Картой в офисе' },
+    { id: 2, icon: fileIcon, title: 'Безналичный расчёт' },
 ];

@@ -43,10 +43,10 @@ function Header() {
                                     <Link to={ROUTES.catalog} className={styles.header__list_link}>Каталог</Link>
                                 </li>
                                 <li className={styles.header__list_item}>
-                                    <Link to={'/'} className={styles.header__list_link}>Оплата</Link>
+                                    <Link to={ROUTES.payment} className={styles.header__list_link}>Оплата</Link>
                                 </li>
                                 <li className={styles.header__list_item}>
-                                    <Link to={'/'} className={styles.header__list_link}>Доставка</Link>
+                                    <Link to={ROUTES.delivery} className={styles.header__list_link}>Доставка</Link>
                                 </li>
                                 <li className={styles.header__list_item}>
                                     <Link to={ROUTES.blog} className={styles.header__list_link}>Блог</Link>

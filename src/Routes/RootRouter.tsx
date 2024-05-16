@@ -11,6 +11,8 @@ import AuthSocialPage from '@src/Pages/AuthSocialPage/AuthSocialPage';
 import { useSelector } from 'react-redux';
 import { isAuthSelector } from '@src/redux/reducers/authReducer/authSelector';
 import PasswordRecoveryPage from '@src/Pages/PasswordRecoveryPage/PasswordRecoveryPage';
+import DeliveryPage from '@src/Pages/DeliveryPage/DeliveryPage';
+import PaymentPage from '@src/Pages/PaymentPage/PaymentPage';
 
 const HomePage = React.lazy(() => import('@pages/HomePage/HomePage'));
 const RegistrationPage = React.lazy(() => import('@pages/StepRegistraion/RegistrationPage/RegistrationPage'));
@@ -56,6 +58,8 @@ function RootRoute() {
                     <Route path={ROUTES.basket} element={<BasketPage />} />
                     <Route path={ROUTES.catalogById} element={<CatalogById />} />
                     <Route path={ROUTES.profile} element={protectedCheck(PersonalProfilePage)} />
+                    <Route path={ROUTES.delivery} element={<DeliveryPage />} />
+                    <Route path={ROUTES.payment} element={<PaymentPage />} />
                 </Route>
                 <Route element={ <LayoutWithoutHeader/> }>
                     <Route path={ROUTES.registration} element={<RegistrationPage />} />
