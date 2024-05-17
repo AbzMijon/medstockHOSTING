@@ -37,6 +37,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
         img {
             filter: brightness(0) saturate(100%) invert(10%) sepia(25%) saturate(1006%) hue-rotate(209deg) brightness(93%) contrast(93%);
         }
@@ -44,5 +45,45 @@
     &__ways_item {
         display: flex;
         align-items: center;
+    }
+    &__cards {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 100px 0 170px 0;
+    }
+    &__card {
+        width: 380px;
+        height: 247px;
+        backdrop-filter: blur(4px);
+        border-bottom: 2px solid rgb(255, 255, 255);
+        border-left: 2px solid rgb(255, 255, 255);
+        border-radius: 20px;
+        padding: 35px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        transform: rotate(-35deg);
+        margin-left: -170px;
+        &:nth-child(2) {
+            transform: rotate(-35deg) translateY(50px);
+        }
+        &:nth-child(3) {
+            transform: rotate(-34deg) translateY(120px);
+        }
+        &:nth-child(4) {
+            transform: rotate(-30deg) translateY(150px);
+        }
+        &:nth-child(5) {
+            transform: rotate(-25deg) translateY(180px);
+        }
+    }
+    &__card_name {
+        margin-bottom: 15px;
+        font-size: 21px;
+    }
+    &__card_num {
+        font-size: 21px;
     }
 }

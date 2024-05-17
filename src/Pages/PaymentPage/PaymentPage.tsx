@@ -1,4 +1,4 @@
-import { PAYMENTS_WAYS } from '@src/constants';
+import { PAYMENTS_WAYS, PAYMENTS_WAYS_CARDS } from '@src/constants';
 import styles from './paymentPage.module.scss';
 import DefaultButton from '@src/Components/DefaultButton/DefaultButton';
 
@@ -6,7 +6,15 @@ function PaymentPage() {
     return (
         <div className={styles.paymentPage}>
             <ul className={styles.paymentPage__cards}>
-
+                {PAYMENTS_WAYS_CARDS && PAYMENTS_WAYS_CARDS?.map((card: any) => (
+                    <li className={styles.paymentPage__card} style={{ backgroundColor: card.gradient }}>
+                        <img src={card.icon} alt="" className={styles.paymentPage__card_icon} />
+                        <div>
+                            <p className={styles.paymentPage__card_name}>{card.name}</p>
+                            <p className={styles.paymentPage__card_num}>{card.number}</p>
+                        </div>
+                    </li>
+                ))}
             </ul>
             <div className={styles.paymentPage__container}>
                 <div className={styles.paymentPage__info}>

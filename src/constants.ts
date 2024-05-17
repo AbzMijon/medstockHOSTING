@@ -24,6 +24,12 @@ import cashIcon from '@assets/svg/cash.svg';
 import cardIcon from '@assets/svg/byCard.svg';
 import fileIcon from '@assets/svg/basketIcon.svg';
 
+import visa from '@assets/img/visaIcon.png';
+import masterCard from '@assets/img/masterCard.png';
+import maestroCard from '@assets/img/Maestro.png';
+import belcard from '@assets/img/belcart.png';
+import webmoney from '@assets/img/webmoney.png';
+
 export const NEWS_CARDS_IN_MAIN_PAGE = [
     {
         id: 0,
@@ -448,4 +454,12 @@ export const PAYMENTS_WAYS = [
     { id: 2, icon: cardIcon, title: 'Картой онлайн' },
     { id: 3, icon: cardIcon, title: 'Картой в офисе' },
     { id: 2, icon: fileIcon, title: 'Безналичный расчёт' },
+];
+
+export const PAYMENTS_WAYS_CARDS = [
+    { id: 0, icon: visa, number: '1234 1234 1234 1234', name: 'Visa', gradient: 'rgba(255, 255, 255, 0.6)' },
+    { id: 1, icon: masterCard, number: '1234 1234 1234 1234', name: 'Mastercard', gradient: 'rgb(255, 255, 255' },
+    { id: 2, icon: maestroCard, number: '1234 1234 1234 1234', name: 'Maestro', gradient: 'rgba(255, 255, 255, 0.6)' },
+    { id: 3, icon: belcard, number: '1234 1234 1234 1234', name: 'Белкарт', gradient: 'rgb(255, 255, 255)' },
+    { id: 4, icon: webmoney, number: '1234 1234 1234 1234', name: 'Webmoney', gradient: 'rgba(255, 255, 255, 0.6)' },
 ];
